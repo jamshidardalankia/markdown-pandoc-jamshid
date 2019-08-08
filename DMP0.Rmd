@@ -1,33 +1,67 @@
 ---
-author: Jamshid Ardalankia
-date: '8/5/2019'
-output: 'html\_document'
-title: DMP Version 0
+author: 'Jamshid Ardalankia, Gail Clement'
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    number_sectoins: TRUE
+    theme: paper
+    highlight: tango
+    fig_width: 4
+    fig_height: 6
+    code_folding: hide
+  word_document:
+    toc: TRUE
+  pdf_document:
+    toc: TRUE
+title: aksfhkvsgf
+bibliography: references.bib
 ---
 
-Data Management Plan: Rio Grande Basin Hydrologic Geodatabase
+# Data Management Plan: Rio Grande Basin Hydrologic Geodatabase
 Compendium.
 
-1.  Types of Data Produced
+# Backgroeund {-}
 
-This project will result in the production of a relational
+ ![figure 1. Area Map](img/rio-grande-basin.png){width=20%}
+
+# 1.  Types of Data Produced
+
+```{r table, echo=TRUE}
+usgs <- read.csv("data/usgs.csv")
+head(usgs, 3)
+```
+
+This dataset has `r nrow(usgs)` sampling sites.
+
+```{r plot, echo=TRUE}
+plot(faithful, main = "Do I wait longer for longer  ...")
+```
+
+
+## subheading for section1
+### subheading
+- This project will result in the production of a relational [ see, for example, @Clement_2013].
 spatially-enabled database integrating all known surface water, ground
 water, and water quality data for the middle Rio Grande basin study
-area. Additionally, Visual Basic for Applications (VBA) code and
+area.
+Additionally, Visual Basic for Applications (VBA) code and
 Structured Query Language (SQL) code are products of the project. All
 updateable datasets are acquired from the original data source (for
-example, EPA websites). Updatable data sources are acquired at specified
+example, EPA websites).
+Updatable data sources are acquired at specified
 intervals – quarterly, or as needed. As new static data sources are
-discovered, they will be integrated into the proposed compendium. Data
-will be processed using dataset‐specific VBA programs. Program file
+discovered, they will be integrated into the proposed compendium.
+Data will be processed using dataset‐specific VBA programs. Program file
 comment headers will be included in the code to explain required input
 variables, purpose of the program, and requirements needed by the user.
 Code will be annotated to promote code readability.
 
-2.  Data and Metadata Standards
+# Data and Metadata Standards {-}
 
 Microsoft Access Database format will be used since it is
-readily-accessible and it is compatible with ESRI ArcGIS
+readily-accessible and it is compatible with [ESRI ArcGIS]
 (http://www.esri.com/software/arcgis/index.html), a Geographic
 Information System software package used by the stakeholders. Naming
 conventions will be consistent – no spaces will be used in table names
@@ -54,7 +88,7 @@ the entire geodatabase.
 The FGDC standard was chosen due to required Federal government
 standards.
 
-3.  Policies for Access and Sharing
+# 3.  Policies for Access and Sharing
 
 The data are public and will be obtainable thru the New Mexico
 Interstate Stream Commission (NMISC). Users of the data will primarily
@@ -62,7 +96,7 @@ be water resource managers in the Rio Grande Basin. USGS publications
 will be released describing the methods and data sources and can be used
 as documentation for the data and to cite the data.
 
-4.  Policies for Re-use, Distribution
+# 4.  Policies for Re-use, Distribution
 
 Access to databases and associated software tools generated under the
 project will be available for educational, research and non-profit
@@ -77,18 +111,31 @@ of a material transfer agreement.
 The data files have a suggested citation, which will be described in the
 metadata in addition to the USGS publications.
 
-5.  Plans for Archiving and Preservation
+# 5.  Plans for Archiving and Preservation
 
-All original raw data files and data source processing programs will be
+ 1. All original raw data files and data source processing programs will be
 versioned over time and maintained in a date-stamped file structure with
-text files documenting the provenance. The database will be preserved in
-perpetuity, housed initially at the New Mexico Interstate Stream
+text files documenting the provenance. 
+    a. The database will be preserved in
+perpetuity, housed initially at the 
+    a. New Mexico Interstate Stream
 Commission Central Office in addition to an off-site copy maintained at
 an NMISC field office and mirrored at the Consortium of Universities for
-the Advancement of Hydrologic Science (CUAHSI). We will also identify
-appropriate archiving institutions that might serve as a mirror
-repository. A data policy and stewardship plan will be established. In
+the Advancement of Hydrologic Science (CUAHSI).
+    a. We will also identify
+appropriate ^[archiving institutions that might serve as a mirror
+repository].
+1. A data policy and stewardship plan will be established. In
 addition to archiving, each database table will be exported to a
 delimited text format to ensure accessibility of the data by other
 software programs. The data manager at the NMISC will be responsible for
 the management of long-term storage and archived data.
+
+
+# Distribution Rights
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+
+
+# Reference {-}
